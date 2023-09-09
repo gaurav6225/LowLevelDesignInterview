@@ -32,4 +32,9 @@ public class CacheLevel extends CacheLevelHandler{
         cache.put(key, value);
         super.write(key, value, time);
     }
+
+    @Override
+    public float getUsage() {
+        return cache.usage();
+    }
 }

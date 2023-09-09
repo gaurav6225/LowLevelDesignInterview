@@ -14,6 +14,10 @@ public abstract class CacheLevelHandler {
         return this;
     }
 
+    public CacheLevelHandler getNextLevel() {
+        return nextLevel;
+    }
+
     public String read(String key, Time time) {
         if(nextLevel != null) {
             return nextLevel.read(key, time);
@@ -28,4 +32,5 @@ public abstract class CacheLevelHandler {
         return;
     }
 
+    public abstract float getUsage();
 }

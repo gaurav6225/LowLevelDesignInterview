@@ -32,4 +32,10 @@ public class CacheFIFO implements Cache{
             cache.put(key, value);
         }
     }
+
+    @Override
+    public float usage() {
+        float use = (float) cache.size() / capacity;
+        return use;
+    }
 }
